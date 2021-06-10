@@ -1,0 +1,36 @@
+html 
+    head
+        title Sign Up 
+        meta(charset='utf-8')
+    body
+        a(href='/')
+            h1 Practice Single Page 
+        form(action='/signUp' method='post' )
+            p
+                h3 ID 
+                input(type='text' id='id' name='id' placeholder='ID' autocomplete="new-password" required)
+            p   
+                h3 PassWord 
+                input(type='password' id='pw' name='pw' placeholder='PW' autocomplete="new-password" required)
+            p
+                h3 Name
+                input(type='text' id='name' name='name' placeholder='NAME' required)
+            p
+                h3 Sex 
+                div 
+                    input(type='radio', name='sex', id='male', value='0' checked)
+                    label(for='male') MALE
+                    input(type='radio', name='sex', id='female', value='1')
+                    label(for='female') FEMALE
+            p 
+                h3 Country
+                select(id='country' name= 'country')
+                    each country, i in countrys = ['Korea', 'USA', 'Canada', 'France']
+                     option(value=i) #{country}
+            p 
+                h3 Location 
+                select(id='location' name= 'location')
+                    each location, i in locations = ['Asia', 'Europe', 'Africa', 'Oceania', 'North America', 'South America']
+                     option(value=i) #{location}
+            p
+                input(type='submit')

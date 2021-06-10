@@ -1,0 +1,23 @@
+html 
+    head
+        title Main
+        meta(charset='utf-8')
+    body
+        p
+            h2= 'Hello! ' + id
+            a(href='/') 
+                h5 Logout
+        p 
+            h3 Total Topic 
+            ul 
+                -each topic in topics 
+                    li 
+                        a(href='/main/#{id}/edit/#{topic.id}/' + (topic.author == id ? '0' : '1'))= topic.title + " : " + topic.author
+        p 
+            h3 Your Topic
+            ul 
+                -each topic in yourTopics 
+                    li 
+                        a(href='/main/#{id}/edit/#{topic.id}/0')= topic.title
+            div 
+                button(onclick='location.href="/main/#{id}/new"') Create New

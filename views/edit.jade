@@ -1,0 +1,23 @@
+html 
+    head
+        title Edit Topic
+        meta(charset='utf-8')
+    body
+        a(href='/main/'+datas.author)
+            h1 Main Page
+        form(action='/main/edit/#{datas.id}' method='post' )
+            p
+                h3 Title 
+                input(type='text' id='title' name='title' placeholder='title' value= datas.title readonly= editable == '0' ? false : true)
+            p   
+                h3 Description 
+                textarea(id='decription' name='decription' placeholder='decription' readonly= editable == '0' ? false : true)= datas.decription
+            p 
+                input(type='hidden', id='author' name='author' value= datas.author)
+            if editable=='0'
+                p
+                    input(type='submit' value='update')
+        form(action='/main/#{datas.author}/delete/#{datas.id}' method='post')
+            if editable=='0'
+                p
+                    input(type='submit' value='delete')

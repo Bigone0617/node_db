@@ -1,0 +1,17 @@
+html 
+    head
+        title Sign In 
+        meta(charset='utf-8')
+    body
+        a(href='/')
+                h1 Practice Single Page 
+        h2 Sign In
+        form(action='/signIn' method='post')
+            p
+                h3 ID 
+                input(type='text' id='id' name='id' placeholder='ID' autocomplete='new-password' required)
+            p   
+                h3 PassWord 
+                input(type='password' id='pw' name='pw' placeholder='PW' autocomplete='new-password' required)
+            p
+                input(type='submit' value='Sign In')

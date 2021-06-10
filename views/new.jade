@@ -1,0 +1,16 @@
+html 
+    head
+        title New Topic
+        meta(charset='utf-8')
+    body
+        a(href='/main/'+id)
+            h1 Main Page
+        form(action='/main/#{id}/new' method='post' )
+            p
+                h3 Title 
+                input(type='text' id='title' name='title' placeholder='title' required)
+            p   
+                h3 Description 
+                textarea(id='decription' name='decription' placeholder='decription' required)
+            p
+                input(type='submit')
